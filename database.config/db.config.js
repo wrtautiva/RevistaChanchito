@@ -1,3 +1,6 @@
+/**
+ * Database Configuration Object
+ */
 const dbconfig = {
         HOST: "localhost",
         USER: "testuser",
