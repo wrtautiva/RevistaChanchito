@@ -44,12 +44,11 @@ async function findAllUsers (req, res){
     try {
         //Execute query
         const users = await dbManager.User.findAll ();
-        
+
         //Send response
         res.json({
                 data: users
         });
-
     } catch (e) {
         // Print error on console
         console.log(e);
@@ -89,48 +88,39 @@ async function findOneUser (req, res){
 /**
  * Update user
  */
-async function updateUser (req, res){
-                /**
-                 * TASK:
-                 * IMPLEMENT THE FUNCTION______________________- 
-                 */
+async function updateUser (req, res)  {
+    const { idUser } = req.params;
+    await dbManager.User.update(req.body, {
+        where:{idUser: idUser}
+    });
+    res.json({success :'se modifico'})
 }
 
-/**
- * Delete an existen user by username
- * @param {*} req 
- * @param {*} res 
- */
-function deleteUserByUsername (req, res){ 
-                /**
-                 * TASK:
-                 * IMPLEMENT THE FUNCTION______________________- 
-                 */
+async function deleteUserByUsername  (req, res)  {
+    const { username } = req.params;
+    await dbManager.User.destroy( {
+        where:{userName: username }
+    })
+    res.json({success: 'user delete'})
 
 }
 
-/**
- * 
- * @param {*} req 
- * @param {*} res 
- */
-function deleteAllUsers (req, res){
-                /**
-                 * TASK:
-                 * IMPLEMENT THE FUNCTION______________________- 
-                 */
+async function deleteAllUsers (req, res){
+    await dbManager.User.destroy({
+        where:{}
+    })
+    res.json({success: 'delete all'})
 }
 
-/**
- * 
- * @param {*} req 
- * @param {*} res 
- */
-function findAllUsersByCreatedDate (req, res){
-                /**
-                 * TASK:
-                 * IMPLEMENT THE FUNCTION______________________- 
-                 */
+async function findAllUsersByCreatedDate (req, res){
+    const { creation_date } = req.params;
+    const user = await dbManager.User.findOne({
+        where: {
+            creation_date: creation_date
+        }
+    });
+    res.json(user);
+
 }
 
 

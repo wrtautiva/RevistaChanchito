@@ -5,6 +5,7 @@ const userController = require ('../controllers/user.controller');
  * GET Route to list all users
  */
 router.get('/', userController.findAllUsers);
+
 /**
  * GET Route to find user by id
  */
@@ -26,11 +27,8 @@ router.delete ('/:username',userController.deleteUserByUsername);
  */
 router.delete ('/',userController.deleteAllUsers);
 
+router.get('/query/:creation_date', userController.findAllUsersByCreatedDate);
 
-/**
- * TASK:
- * ADD THE MISSING ROUTES ______________________________________________________ 
- */
 
 // Export router
 module.exports = router;
