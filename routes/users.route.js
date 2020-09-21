@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
 const userController = require ('../controllers/user.controller'); 
-/**
- * GET Route to list all users
- */
+
+router.get.route.findAllUsers;
+
 router.get('/', userController.findAllUsers);
 
 router.get.findAllUsers;
