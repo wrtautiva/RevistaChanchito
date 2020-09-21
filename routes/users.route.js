@@ -6,26 +6,27 @@ const userController = require ('../controllers/user.controller');
  */
 router.get('/', userController.findAllUsers);
 
-/**
- * GET Route to find user by id
- */
+router.get.findAllUsers;
+
 router.get('/:idUser', userController.findOneUser);
-/**
- * POST Route to create user
- */
+
+router.post.findOneUser;
+ 
 router.post ('/',userController.createUser);
-/**
- * PUT Route to update an user by id
- */
+
+router.post.createUser;
+
 router.put ('/:idUser',userController.updateUser);
-/**
- * DELETE Route to delete an user by username
- */
+
+router.put.updateUser;
+
 router.delete ('/:username',userController.deleteUserByUsername);
-/**
- * DELETE Route to delete all users
- */
+
+router.delete.deleteUserByUsername;
+
 router.delete ('/',userController.deleteAllUsers);
+
+router.delete.deleteAllUsers;
 
 router.get('/query/:creation_date', userController.findAllUsersByCreatedDate);
 
