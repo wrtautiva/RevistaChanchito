@@ -4,6 +4,12 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
+var paisRouter = require('./routes/pais.route');
+var contactoRouter = require('./routes/contacto.route');
+var investigacionRouter = require('./routes/investigacion.route');
+var investigacionComentarioRouter = require('./routes/investigacionComentario.route');
+var postulacionRouter = require('./routes/postulacion.route');
+var postulacionComentarioRouter = require('./routes/postulacionComentario.route');
 
 var app = express();
 
@@ -16,7 +22,12 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-
+app.use('/pais', paisRouter);
+app.use('/contacto', contactoRouter);
+app.use('/investigacion', investigacionRouter);
+app.use('/investigacionComentario', investigacionComentarioRouter);
+app.use('/postulacion', postulacionRouter);
+app.use('/postulacionComentario', postulacionComentarioRouter);
 
 dbManager.sequelizeConnection.authenticate()
   .then(() => {
