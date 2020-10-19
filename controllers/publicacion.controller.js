@@ -1,18 +1,18 @@
 const  dbManager = require('../database/database.manager');
 
-async function findAllinfoini (req, res){
+async function findAllpublicacion (req, res) {
 
     try {
-        const  info = await  dbManager.Ininfo.findAll();
-        console.log(info);
+        const publicacion = await  dbManager.Publicacion.findAll();
         res.json({
-            data:info
+            data:publicacion
         })
+
     }catch (e){
         res.status(500).send({
             message: "Some error occurred"
         });
-
     }
 }
-exports.findAllinfoini = findAllinfoini;
+
+exports.findAllpublicacion = findAllpublicacion;
