@@ -8,6 +8,9 @@ const usuarioRouter = require('./routes/usuario.route');
 const parametrosRouter = require('./routes/parametros.route');
 const volumenRouter = require('./routes/volumen.route');
 const publicacionRouter = require('./routes/publicacion.route');
+const publicacionSeccionRouter = require('./routes/publicacionseccion.route');
+const seccionRouter = require('./routes/seccion.route');
+
 
 
 
@@ -26,6 +29,8 @@ app.use('/usuario',usuarioRouter);
 app.use('/parametros',parametrosRouter);
 app.use('/volumen',volumenRouter);
 app.use('/publicacion',publicacionRouter);
+app.use('/publicacionseccion',publicacionSeccionRouter);
+app.use('/seccion',seccionRouter);
 
 
 

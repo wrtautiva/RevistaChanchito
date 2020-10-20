@@ -27,7 +27,7 @@ module.exports = (sequelize, Sequelize) =>{
         creation_date: Sequelize.DATE,
         },
     {
-        tableName: "users",
+        tableName: "usuarios",
         timestamps:false
 
     });
