@@ -10,6 +10,7 @@ const volumenRouter = require('./routes/volumen.route');
 const publicacionRouter = require('./routes/publicacion.route');
 const publicacionSeccionRouter = require('./routes/publicacionseccion.route');
 const seccionRouter = require('./routes/seccion.route');
+const signupRouter = require('./routes/signup.route');
 
 
 
@@ -31,9 +32,7 @@ app.use('/volumen',volumenRouter);
 app.use('/publicacion',publicacionRouter);
 app.use('/publicacionseccion',publicacionSeccionRouter);
 app.use('/seccion',seccionRouter);
-
-
-
+app.use('/signup',signupRouter),
 
 
 

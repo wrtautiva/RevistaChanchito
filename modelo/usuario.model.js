@@ -15,7 +15,7 @@ module.exports = (sequelize, Sequelize) =>{
         userapellido :{
             type: Sequelize.STRING,
         },
-        usercorreo : {
+        usercorreo :{
             type: Sequelize.STRING,
         },
         userpasword:{
@@ -24,6 +24,9 @@ module.exports = (sequelize, Sequelize) =>{
         userstado :{
             type: Sequelize.STRING,
         },
+        token :{
+             type: Sequelize.STRING,
+            },
         creation_date: Sequelize.DATE,
         },
     {
